@@ -1,0 +1,25 @@
+image: docker:latest
+
+variables:
+  DOCKERHUB_USER_NAME: $DOCKERHUB_USER_NAME
+  DOCKERHUB_PASSWORD: $DOCKERHUB_PASSWORD
+  DOCKER_TAG: test
+
+stages:
+  - build
+  - deploy
+
+before_script:
+  - docker info
+  - docker login -u ${DOCKERHUB_USER_NAME} -p ${DOCKERHUB_PASSWORD}
+
+build_job:
+  stage: build
+  script: 
+    - docker build -t ${DOCKERHUB_USER_NAME}/jisaku_framework:${DOCKER_TAG} .
+    - docker push ${DOCKERHUB_USER_NAME}/jisaku_framework:${DOCKER_TAG}
+  tags:
+    - docker
+
+after_script:
+  - mvn clean test jacoco:report coveralls:report
