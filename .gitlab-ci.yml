@@ -5,6 +5,9 @@ variables:
   DOCKERHUB_PASSWORD: $DOCKERHUB_PASSWORD
   DOCKER_TAG: test
 
+services:
+  - docker:dind #Docker in Docker
+
 stages:
   - build
   - deploy
