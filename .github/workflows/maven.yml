@@ -25,4 +25,4 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build with Maven
-      run: mvn crean install #「mvn」コマンドを実行してビルドを行う
+      run: mvn clean install #「mvn」コマンドを実行してビルドを行う
