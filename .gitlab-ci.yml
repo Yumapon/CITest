@@ -4,7 +4,7 @@ variables:
   DOCKERHUB_USER_NAME: $DOCKERHUB_USER_NAME
   DOCKERHUB_PASSWORD: $DOCKERHUB_PASSWORD
   DOCKERREPOSITORY_NAME: citest
-  DOCKER_TAG: latest
+  DOCKER_TAG: gitlab
 
 services:
   - docker:dind #Docker in Docker
