@@ -19,15 +19,9 @@ jobs:
     #実行する処理やコマンドを指定
     steps:
     - uses: actions/checkout@v2 #リポジトリからのチェックアウトを行う「actions/checkout」アクションを実行する
-    - name: Set up JDK 8
+    - name: Set up JDK 1.8
       uses: actions/setup-java@v2 #「setup-java」コマンドを実行してsetupを行う
       with:
-        java-version: '8'
-    - name: setup maven build1
-      run: curl -sSL http://archive.apache.org/dist/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz | tar xzf - -C /usr/share \
-           && mv /usr/share/apache-maven-3.2.5 /usr/share/maven \
-           && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-    - name: setup maven build2
-      run: MAVEN_HOME /usr/share/maven
+        java-version: '1.8'
     - name: Build with Maven
       run: mvn clean install #「mvn」コマンドを実行してビルドを行う
