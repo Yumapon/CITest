@@ -25,6 +25,4 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build with Maven
-      run: mvn -B package --file pom.xml #「mvn」コマンドを実行してビルドを行う
-    - name: Test with Maven
-      run: mvn clean test jacoco:report coveralls:report
+      run: mvn crean install #「mvn」コマンドを実行してビルドを行う
