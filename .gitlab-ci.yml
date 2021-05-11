@@ -3,8 +3,8 @@ image: docker:latest
 variables:
   DOCKERHUB_USER_NAME: $DOCKERHUB_USER_NAME
   DOCKERHUB_PASSWORD: $DOCKERHUB_PASSWORD
-  DOCKERREPOSITORY_NAME: gitlabcitest
-  DOCKER_TAG: test
+  DOCKERREPOSITORY_NAME: citest
+  DOCKER_TAG: latest
 
 services:
   - docker:dind #Docker in Docker
